@@ -1,0 +1,37 @@
+{
+  "name": "signal-slot-ts",
+  "version": "1.0.8",
+  "description": "Signals and Slots",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jasmine-ts \"src/main/test/signal/**.ts\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgr-myrg/signal-slot-ts.git"
+  },
+  "keywords": [
+    "typescript",
+    "signal",
+    "event",
+    "emitter"
+  ],
+  "author": "Roger Paul Mayorga <solidity@gmx.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rgr-myrg/signal-slot-ts/issues"
+  },
+  "homepage": "https://github.com/rgr-myrg/signal-slot-ts#readme",
+  "dependencies": {
+    "typescript": "^2.7.1",
+    "typings": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.6",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "^0.2.1",
+    "ts-node": "^4.1.0"
+  }
+}
