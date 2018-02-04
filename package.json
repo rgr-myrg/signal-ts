@@ -1,5 +1,5 @@
 {
-  "name": "signal-slot-ts",
+  "name": "signal-slot",
   "version": "1.0.8",
   "description": "Signals and Slots",
   "main": "index.ts",
