@@ -1,7 +1,9 @@
 .gitignore
 .git/
 node_modules/
-dist/
+spec/
 src/
 package-lock.json
+sequence-diagram.svg
 tsconfig.json
+README.md

@@ -8,7 +8,7 @@
 		"sourceMap": true,
 		"declaration": true,
 		"strict": true,
-		"outDir": "./dist",
+		"outDir": "./",
 		"lib": ["es5", "es6", "dom"]
 	},
 	"files": [
