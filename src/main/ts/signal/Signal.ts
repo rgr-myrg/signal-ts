@@ -36,7 +36,7 @@ export class Signal<T> {
 
 	public emit(data: T): void;
 	public emit(): void;
-	public emit(): void {console.log("[emit]", arguments);
+	public emit(): void {
 		if (this.slotsPriority.length > 0) {
 			this.notify(this.slotsPriority, arguments[0]);
 		}
