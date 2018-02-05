@@ -36,7 +36,7 @@ export class Signal<T> {
 
 	public emit(data: T): void;
 	public emit(): void;
-	public emit(): void {
+	public emit(): void {console.log("[emit]", arguments);
 		if (this.slotsPriority.length > 0) {
 			this.notify(this.slotsPriority, arguments[0]);
 		}
@@ -49,11 +49,12 @@ export class Signal<T> {
 		}
 	}
 
-	private notify(slots: Slot[], ...args: any[]):void {
+	private notify(slots: Slot[], payload: T):void {
 		// http://jsbench.github.io/#174d623c29798680e44b867dcf9732e7
 		// Reverse loop with implicit comparison
 		for (let i = slots.length; i--;) {
-			slots[i].apply(...args);
+			let slot: Slot = slots[i];
+			slot.getCallback().call(slot.getCallee() || this, payload);
 		}
 	}
 
