@@ -25,6 +25,10 @@ export class Slot {
 		return this.listener;
 	}
 
+	public getCallee(): Object {
+		return this.callee || this;
+	}
+
 	public getType(): SlotType {
 		return this.slotType;
 	}
@@ -41,12 +45,6 @@ export class Slot {
 
 	public bind(): void {
 		this.signal.addSlot(this);
-	}
-
-	public apply(...args: any[]): void;
-	public apply(): void;
-	public apply(): void {
-		this.listener.apply(this.callee || this, arguments);
 	}
 
 	public destroy(): void {
