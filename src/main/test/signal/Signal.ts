@@ -13,6 +13,7 @@ describe("Signal Tests", () => {
 		public priority(data: number): void {
 			this.data = data;
 		}
+		public noData(): void {}
 		public getData(): any {
 			return this.data;
 		}
@@ -23,6 +24,7 @@ describe("Signal Tests", () => {
 		subscriber = new TestSubscriber();
 		handlerSpy = spyOn(subscriber, "handler").and.callThrough();
 		spyOn(subscriber, "priority").and.callThrough();
+		spyOn(subscriber, "noData").and.callThrough();
 	});
 
 	it("emit() should notify with the test data", () => {
@@ -90,5 +92,13 @@ describe("Signal Tests", () => {
 		expect(subscriber.handler).toHaveBeenCalledTimes(1);
 		expect(subscriber.getData()).toEqual(2);
 		expect(subscriber.priority).toHaveBeenCalledTimes(2);
+	});
+
+	it("emit() should notify the listener without parameters", () => {
+		onLoad.do(subscriber.noData).context(subscriber).bind();
+		onLoad.emit();
+
+		expect(subscriber.noData).toHaveBeenCalled();
+		expect(subscriber.noData).toHaveBeenCalledTimes(1);
 	});
 });
