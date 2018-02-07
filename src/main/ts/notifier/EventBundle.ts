@@ -23,25 +23,20 @@ export class EventBundle {
 		return this;
 	}
 
-	public now(): EventBundle {
-		this.type = QueueType.now;
-		return this;
+	public queue(): void {
+		this.type = QueueType.queue;
+		this.notifier.schedule(this);
 	}
 
-	public delay(milliseconds: number): EventBundle {
+	public delay(milliseconds: number): void {
 		this.type = QueueType.delay;
 		this.milliseconds = milliseconds;
-		return this;
+		this.notifier.schedule(this);
 	}
 
-	public queue(): EventBundle {
-		this.type = QueueType.queue;
-		return this;
-	}
-
-	public post(): EventBundle {
-		this.notifier.post(this);
-		return this;
+	public now(): void {
+		this.type = QueueType.now;
+		this.notifier.schedule(this);
 	}
 
 	public getType(): QueueType {

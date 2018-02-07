@@ -50,7 +50,7 @@ export class Signal<T> {
 	}
 
 	private notify(slots: Slot[], payload: T):void {
-		// http://jsbench.github.io/#174d623c29798680e44b867dcf9732e7
+		//http://jsbench.github.io/#174d623c29798680e44b867dcf9732e7
 		// Reverse loop with implicit comparison
 		for (let i = slots.length; i--;) {
 			let slot: Slot = slots[i];
