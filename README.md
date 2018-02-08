@@ -1,5 +1,3 @@
-![alt text](logo.png "signal-slot-ts")
-
 # Signal Slot
 
 [Signals and Slots](https://en.wikipedia.org/wiki/Signals_and_slots) pattern written in Typescript.
