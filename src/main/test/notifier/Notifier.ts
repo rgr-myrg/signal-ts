@@ -87,4 +87,12 @@ describe("Notifier Tests", () => {
 			expect(subscriber.complete).toHaveBeenCalledTimes(1);
 		}, 1000);
 	});
+
+	it ("flush() should batch process the queue", () => {
+		notifier.notify(onLoad).queue();
+		notifier.notify(onLoad).queue();
+		notifier.notify(onLoad).queue();
+		notifier.flush();
+		expect(subscriber.handler).toHaveBeenCalledTimes(3);
+	});
 });
