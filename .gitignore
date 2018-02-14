@@ -1,5 +1,6 @@
 /node_modules/
 /signal/
+/notifier/
 /index.d.ts
 /index.js
 /index.js.map

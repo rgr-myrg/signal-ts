@@ -7,3 +7,5 @@ package-lock.json
 sequence-diagram.svg
 tsconfig.json
 README.md
+logo.png
+npm-debug.log

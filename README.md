@@ -1,3 +1,4 @@
+
 # Signal Slot
 
 [Signals and Slots](https://en.wikipedia.org/wiki/Signals_and_slots) pattern written in Typescript.
@@ -59,6 +60,56 @@ onCompleted.do(this.methodHandler).context(this).bind();
 ```typescript
 onCompleted.emit(299792458);
 ```
+# Built-in Notifier
+The Notifier comes with a queue that can be controlled with _start()_, _pause()_, _flush()_, _now()_, _delay()_, and _when()_ methods.
+
+You can delegate emitting signals to the notifier if you need signals to emit in sequence. In other words, if the order of events is important to your app, you can use the Notifier to your advantage.
+
+Create an instance of Notifier:
+```typescript
+let notifier = new Notifier();
+```
+To add signal events to the queue:
+```typescript
+let onStarted: Signal<string> = new Signal();
+let onCompleted: Signal<string> = new Signal();
+notifier.notify(onStarted).with("data").queue();
+notifier.notify(onCompleted).with("data").queue();
+```
+To start processing the queue:
+```typescript
+notifier.start();
+```
+To pause the queue:
+```typescript
+notifier.pause();
+```
+Use _now()_ to bypass the queue and notify immediately:
+```typescript
+notifier.notify(onStarted).with("data").now();
+```
+Use _delay()_ to bypass the queue and delay the notification:
+```typescript
+notifier.notify(onCompleted).with("data").delay(1000);
+```
+### Capturing signals and controlling when to start the queue
+Sometimes there is a need to add signal events to the queue and fire them if and only _when()_ a specific signal was dispatched.
+
+For example your app needs to load configuration data async but the sequence of events needs to be maintained until the async is complete.
+
+```typescript
+// Tell notifier to start only when onAsyncCompleted is notified
+notifier.when(onAsyncCompleted).start();
+
+// Capture sequence
+notifier.notify(onLoaded).with("data").queue();
+notifier.notify(onStarted).with("data").queue();
+notifier.notify(onCompleted).queue();
+
+// The following will trigger the queue start
+notifier.notify(onAsyncCompleted).queue();
+```
+In the above scenario the queue will only start to process once a notification for the onAsyncCompleted signal is added to the queue.
 
 # Pro-Tips
 
