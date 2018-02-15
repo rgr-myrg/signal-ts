@@ -67,6 +67,8 @@ You can delegate emitting signals to the notifier if you need signals to emit in
 
 Create an instance of Notifier:
 ```typescript
+import {Notifier} from "signal-slot";
+
 let notifier = new Notifier();
 ```
 To add signal events to the queue:
