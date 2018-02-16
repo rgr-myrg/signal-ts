@@ -12,5 +12,5 @@ script:
  - npm run cover
 
 after_script: 
- "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js" 
+ "cat .nyc_output/*.json | node_modules/coveralls/bin/coveralls.js" 
 
