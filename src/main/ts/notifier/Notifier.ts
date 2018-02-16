@@ -33,6 +33,11 @@ export class Notifier {
 	}
 
 	public schedule(bundle: EventBundle): void {
+		// Check for when() condition before posting the signal
+		if (this.matchSignal && this.matchSignal === bundle.getSignal()) {
+			this.shouldRun = true;
+		}
+
 		switch (bundle.getType()) {
 			case QueueType.delay:
 				this.postDelay(bundle);
@@ -48,11 +53,6 @@ export class Notifier {
 
 	private postQueue(bundle: EventBundle): void {
 		this.queue.unshift(bundle);
-
-		if (this.matchSignal && this.matchSignal === bundle.getSignal()) {
-			this.shouldRun = true;
-		}
-
 		this.processQueue();
 	}
 
