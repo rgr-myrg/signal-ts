@@ -5,3 +5,5 @@
 /index.js
 /index.js.map
 /package-lock.json
+/coverage/
+/.nyc_output/

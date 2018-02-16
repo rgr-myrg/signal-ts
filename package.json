@@ -6,7 +6,8 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jasmine-ts \"src/main/test/**/**.ts\""
+    "test": "jasmine-ts \"src/main/test/**/*.ts\"",
+    "cover": "nyc -e .ts -x \"./src/main/test/**/*.ts\" jasmine-ts \"./src/main/test/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -30,8 +31,11 @@
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
+    "coveralls": "^3.0.0",
+    "istanbul": "^0.4.5",
     "jasmine-spec-reporter": "^4.2.1",
     "jasmine-ts": "^0.2.1",
+    "nyc": "^11.4.1",
     "ts-node": "^4.1.0"
   }
 }

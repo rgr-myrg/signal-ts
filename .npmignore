@@ -1,5 +1,8 @@
-.gitignore
+coverage/
 .git/
+.gitignore
+.nyc_output
+.travis.yml
 node_modules/
 spec/
 src/
