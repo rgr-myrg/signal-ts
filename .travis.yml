@@ -1,4 +1,4 @@
-language : node_js
+language: node_js
 
 sudo: false
 
@@ -9,8 +9,9 @@ install:
  - npm install
 
 script:
- - npm run cover
+ - npm install codecov -g
+ - npm run coverage
+ - npm run nyc-report
 
-after_script: 
- "cat .nyc_output/*.json | node_modules/coveralls/bin/coveralls.js" 
-
+after_script:
+ - codecov
