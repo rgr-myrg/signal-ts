@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/rgr-myrg/signal-slot-ts.svg?branch=master)](https://travis-ci.org/rgr-myrg/signal-slot-ts)
+[![Build Status](https://travis-ci.org/rgr-myrg/signal-slot-ts.svg?branch=master)](https://travis-ci.org/rgr-myrg/signal-slot-ts) [![npm version](https://badge.fury.io/js/signal-slot.svg)](https://badge.fury.io/js/signal-slot)
 
 # Signal Slot
 
