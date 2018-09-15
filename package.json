@@ -1,6 +1,6 @@
 {
   "name": "signal-ts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple to use Signal pattern written in Typescript. Signals are typed.",
   "main": "dist/Signal.ts",
   "types": "dist/Signal.d.ts",
