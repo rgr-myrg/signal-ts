@@ -5,5 +5,5 @@ export declare class Signal<T> {
     once(slot: Function): Signal<T>;
     remove(slot: Function): this;
     emit(payload: T): void;
-    private notify;
+    notify(slots: Function[], payload: T): void;
 }
