@@ -1,19 +1,19 @@
 {
-  "name": "signal-slot",
-  "version": "1.1.1",
-  "description": "Signals and Slots",
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "name": "signal-ts",
+  "version": "1.2.0",
+  "description": "Simple to use Signal pattern written in Typescript. Signals are typed.",
+  "main": "dist/Signal.ts",
+  "types": "dist/Signal.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jasmine-ts \"src/main/test/**/*.ts\"",
-    "coverage": "nyc -e .ts -x \"./src/main/test/**/*.ts\" jasmine-ts \"./src/main/test/**/*.ts\"",
+    "test": "jasmine-ts \"src/test/*.spec.ts\"",
+    "coverage": "nyc -e .ts -x \"./src/test/*.ts\" jasmine-ts \"./src/test/*.ts\"",
     "coverage-text": "nyc -e .ts report --reporter=text-lcov > coverage/coverage.lcov npm test",
     "nyc-report": "nyc -e .ts report --reporter=json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rgr-myrg/signal-slot-ts.git"
+    "url": "git+https://github.com/rgr-myrg/signal-ts.git"
   },
   "keywords": [
     "typescript",
@@ -21,23 +21,21 @@
     "event",
     "emitter"
   ],
-  "author": "Roger Paul Mayorga <solidity@gmx.com>",
+  "author": "<solidity@gmx.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rgr-myrg/signal-slot-ts/issues"
+    "url": "https://github.com/rgr-myrg/signal-ts/issues"
   },
-  "homepage": "https://github.com/rgr-myrg/signal-slot-ts#readme",
-  "dependencies": {
-    "types": "^0.1.1",
-    "typescript": "^2.7.2"
-  },
+  "homepage": "https://github.com/rgr-myrg/signal-ts#readme",
+  "dependencies": {},
   "devDependencies": {
-    "@types/jasmine": "^2.8.6",
+    "@types/jasmine": "^2.8.8",
     "codecov": "^3.0.0",
     "istanbul": "^0.4.5",
     "jasmine-spec-reporter": "^4.2.1",
     "jasmine-ts": "^0.2.1",
     "nyc": "^11.5.0",
-    "ts-node": "^4.1.0"
+    "ts-node": "^4.1.0",
+    "typescript": "^3.0.3"
   }
 }
