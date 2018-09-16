@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.org/rgr-myrg/signal-ts.svg?branch=master)](https://travis-ci.org/rgr-myrg/signal-ts) [![npm version](https://badge.fury.io/js/signal-ts.svg)](https://badge.fury.io/js/signal-ts)
 
-# Signal Slot
+# TypeScript Signal 
 
 [Signal Pattern](https://en.wikipedia.org/wiki/Signals_and_slots) pattern written in Typescript.
+
+Signals are typed and easy to use! 
 
 # Installation
 
